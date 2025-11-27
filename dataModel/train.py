@@ -11,7 +11,7 @@ from model import TomatoHealthNet
 #Learning rate = standard
 LEARNING_RATE = 0.001
 
-#Epochs= hoe many times we go through the entire dataset
+#Epochs= how many times we go through the entire dataset
 EPOCHS = 50
 
 #Batch size = how many tomatoes we look at after updating the brain 
@@ -121,6 +121,6 @@ with torch.no_grad(): #turn off gradient calculation to save memory and time
 
     #---------------------SAve the model
     #Save state_dict, the learned weights and matrices
-    torch.save(model.state_dict(), "tomato_model.pth")
+    torch.save(model.state_dict(), "tomato_model_2.pth")
     print("Model saved as 'tomato_model.pth'")
 

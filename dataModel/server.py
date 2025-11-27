@@ -1,6 +1,7 @@
 import torch
 import uvicorn 
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from model import TomatoHealthNet
 
@@ -19,6 +20,14 @@ class TomatoInput(BaseModel):
 
 #---------Initialization
 app = FastAPI()
+# Allow cross-origin requests so Unity  can call this API.
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 print("Initializing Neural Network...")
 
 #1. create the architechture
