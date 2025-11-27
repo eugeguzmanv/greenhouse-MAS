@@ -1,0 +1,48 @@
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+MemoryCaptures/
+sysinfo.txt
+*.stacktrace
+
+# User settings (no versionar)
+UserSettings/
+
+# Visual Studio / Rider / VSCode
+.vscode/
+.vs/
+.idea/
+*.sln
+*.csproj
+*.unityproj
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Unity cache / export
+ExportedObj/
+*.apk
+*.aab
+*.unitypackage
+
+# Build results
+/*.apk
+/*.aab
+/*.exe
+
+# TextMeshPro tmp
+Assets/**/*.meta
+
+# Avoid committing large auto-generated crash dumps etc
+crashlytics-build.properties
