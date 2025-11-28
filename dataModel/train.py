@@ -12,18 +12,23 @@ from model import TomatoHealthNet
 LEARNING_RATE = 0.001
 
 #Epochs= how many times we go through the entire dataset
-EPOCHS = 50
+EPOCHS = 100
 
 #Batch size = how many tomatoes we look at after updating the brain 
 BATCH_SIZE = 32 # a standard
 
 # 1. Data loading
+EXPECTED_COLUMNS = [
+    'fruit_redness', 'fruit_greenness', 'leaf_health', 
+    'spot_count', 'spot_darkness', 'surface_texture', 
+    'size', 'stem_brownness'
+]
 print("Loading CSV data..")
 df = pd.read_csv('tomato_dataset.csv')
 
 # 2. separate features(x) and labels (y)
-X = df.drop('label', axis=1).values # x = all columns except labels
-y = df['label'].values # y = only the 'label' column
+X = df[EXPECTED_COLUMNS].values 
+y = df['label'].values
 
 # 3. split into train (80%) and test (80%)
 #random state = 42 ensures we get the same split every time 
@@ -59,10 +64,14 @@ criterion = nn.BCELoss()
 
 #Adam = a smart optimizer
 #can use standard gradient descent but Adam adapts speed automatically
-optimizer = optim.Adam(model.parameters(), lr = LEARNING_RATE)
-
+optimizer = optim.Adam(model.parameters(), lr = LEARNING_RATE, weight_decay=1e-5)
+# Learning rate scheduler to reduce LR if stuck
+scheduler = optim.lr_scheduler.ReduceLROnPlateau(
+    optimizer, mode='min', factor=0.5, patience=10
+)
 #------------Training Loop
 print("\nStarting training")
+best_loss = float('inf')
 
 for epoch in range(EPOCHS): 
     model.train() #trainng mode for the model
@@ -86,16 +95,24 @@ for epoch in range(EPOCHS):
         #5 backward the pass, calculate gradient for every weight
         loss.backward()
 
+        # Gradient clipping to prevent exploding gradients
+        torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
+
         #6. optimization step, adjust the weights based on the gradients in 5
         optimizer.step()
 
         running_loss += loss.item()
-    
+    avg_loss = running_loss / len(train_loader)
+
     #print stats every 5 epochs
     if(epoch+1) % 5 == 0:
-        avg_loss = running_loss / len(train_loader)
+        
         print(f"Epoch[{epoch + 1}/{EPOCHS}], Loss : {avg_loss:.4f}")
-    
+    #save the best model
+    if avg_loss < best_loss:
+        best_loss = avg_loss
+        torch.save(model.state_dict(), "tomato_nn_best.pth")
+
 print("Training complete")
 
 #-------------------EVALUATION
@@ -108,19 +125,34 @@ with torch.no_grad(): #turn off gradient calculation to save memory and time
     y_test_gpu = y_test.to(device)
 
     #get predictions
-    test_outputs = model(X_test_gpu)
+    outputs = model(X_test_gpu)
+
+    # Test loss
+    test_loss = criterion(outputs, y_test_gpu).item()
+    print(f"\nTest Loss: {test_loss:.4f}")
 
     #convert probabilities to 0 or 1
-    predicted = test_outputs.round()
+    predicted = outputs.round()
+    actuals = y_test_gpu.round() # Round soft labels (0.8 -> 1.0)
 
     #calc simple accuracy
-    correct_count = predicted.eq(y_test_gpu).sum().item()
+    correct_count = predicted.eq(actuals).sum().item()
     accuracy = correct_count / y_test.shape[0]
 
     print(f"\nFinal Accuracy on test Set: {accuracy * 100:.2f}%")
+    
+    # Mean Absolute Error (better metric for soft labels)
+    mae = torch.abs(outputs - y_test_gpu).mean().item()
+    print(f"Mean Absolute Error: {mae:.4f}")
+
+    #Show predictions vs actuals
+    print("\nSample predictions:")
+    for i in range(min(10, len(outputs))):
+        print(f"Predicted: {outputs[i].item():.3f}, Actual: {y_test_gpu[i].item():.3f}")
+
 
     #---------------------SAve the model
     #Save state_dict, the learned weights and matrices
-    torch.save(model.state_dict(), "tomato_model_2.pth")
-    print("Model saved as 'tomato_model.pth'")
+    torch.save(model.state_dict(), "tomato_nn.pth")
+    print("Model saved as 'tomato_nn.pth'")
 

@@ -35,7 +35,7 @@ model = TomatoHealthNet(input_features=8)
 
 #2. load the weights
 try: 
-    model.load_state_dict(torch.load("tomato_model.pth", map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load("tomato_nn_best.pth", map_location=torch.device('cpu')))
     model.eval() #ready mode
     print("Model loaded successfully")
 except FileNotFoundError: 
