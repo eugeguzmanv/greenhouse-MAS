@@ -24,7 +24,7 @@ EXPECTED_COLUMNS = [
     'size', 'stem_brownness'
 ]
 print("Loading CSV data..")
-df = pd.read_csv('tomato_dataset.csv')
+df = pd.read_csv("tomato_data.csv")
 
 # 2. separate features(x) and labels (y)
 X = df[EXPECTED_COLUMNS].values 

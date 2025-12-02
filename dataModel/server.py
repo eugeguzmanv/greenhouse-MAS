@@ -16,6 +16,8 @@ class TomatoInput(BaseModel):
     surface_texture: float
     size: float
     stem_brownness: float
+    x_coordinate: int
+    y_coordinate: int
 
 
 #---------Initialization
@@ -69,12 +71,19 @@ def predict_tomato(data: TomatoInput):
     
     #4 process result
     score = prediction.item() #extract float from tensor
-    should_cut = score > 0.5 #decision
+    if score > 0.4 and score < 0.6: #decision of cutting
+         cut_decision = "cut_plant"
+    elif score > 0.6: 
+        cut_decision = "cut_neighbors"
+    else: 
+        cut_decision = "dont_cut"
 
     #5 return JSON
     return{
+        "x_coordinate": data.x_coordinate,
+        "y_coordinate": data.y_coordinate,
         "probability": score,
-        "cut_decision": should_cut
+        "cut_decision": cut_decision
     }
 
 
