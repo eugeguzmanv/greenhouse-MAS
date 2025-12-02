@@ -23,11 +23,9 @@ public class TomatoInteraction : MonoBehaviour
     private bool isInspecting = false;
     private bool isTransitioning = false;
 
-    // inspect rotation state
     private float inspectYaw;
     private float inspectPitch;
 
-    // store constant world scale (size) of the tomato
     private Vector3 originalWorldScale;
 
     private Coroutine transitionRoutine;
@@ -35,10 +33,7 @@ public class TomatoInteraction : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        // Store the tomato world scale once (even if parent is scaled)
         originalWorldScale = transform.lossyScale;
-        AnyInspecting = false;
 
         AttachToPlant();
         LockCursor();
@@ -48,48 +43,34 @@ public class TomatoInteraction : MonoBehaviour
     {
         if (isTransitioning) return;
 
-        // E = pick up / put back (only when looking at tomato)
         if (Input.GetKeyDown(KeyCode.E))
-        {
             TryInteract();
-        }
 
-        // F = toggle inspect (only when held)
         if (isHeld && Input.GetKeyDown(KeyCode.F))
         {
-            if (!isInspecting)
-                StartInspect();
-            else
-                EndInspect();
+            if (!isInspecting) StartInspect();
+            else EndInspect();
         }
 
-        // Q = drop (only when held)
         if (isHeld && Input.GetKeyDown(KeyCode.Q))
-        {
             Drop();
-        }
     }
 
     void LateUpdate()
     {
-        if (!isInspecting || isTransitioning)
-            return;
+        if (!isInspecting || isTransitioning) return;
 
-        // Keep tomato exactly at center of inspect point
         transform.localPosition = Vector3.zero;
 
-        // Mouse deltas
         float mouseX = Input.GetAxis("Mouse X");
         float mouseY = Input.GetAxis("Mouse Y");
 
-        // Update target angles (local to inspectPoint)
-        inspectYaw   += mouseX * inspectRotateSpeed;
+        inspectYaw += mouseX * inspectRotateSpeed;
         inspectPitch -= mouseY * inspectRotateSpeed;
         inspectPitch = Mathf.Clamp(inspectPitch, -80f, 80f);
 
         Quaternion targetRot = Quaternion.Euler(inspectPitch, inspectYaw, 0f);
 
-        // Smooth local rotation (gives "delay" feeling)
         transform.localRotation = Quaternion.Slerp(
             transform.localRotation,
             targetRot,
@@ -97,28 +78,18 @@ public class TomatoInteraction : MonoBehaviour
         );
     }
 
-    // ---------------- Core interaction ----------------
+    // ---------- Interaction Logic ----------
 
     void TryInteract()
     {
         Camera cam = Camera.main;
         Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
 
-        if (!Physics.Raycast(ray, out RaycastHit hit, interactDistance))
-            return;
+        if (!Physics.Raycast(ray, out RaycastHit hit, interactDistance)) return;
+        if (hit.collider.gameObject != gameObject) return;
 
-        if (hit.collider.gameObject != gameObject)
-            return;
-
-        if (!isHeld && !isInspecting)
-        {
-            PickUp();
-        }
-        else if (isHeld && !isInspecting)
-        {
-            PlaceBack();
-        }
-        // If inspecting, E does nothing (use F or Q).
+        if (!isHeld && !isInspecting) PickUp();
+        else if (isHeld && !isInspecting) PlaceBack();
     }
 
     void AttachToPlant()
@@ -129,10 +100,7 @@ public class TomatoInteraction : MonoBehaviour
         isTransitioning = false;
         AnyInspecting = false;
 
-        // Parent to plant socket, keep world size
-        SetParentKeepWorldScale(plantSocket);
-        transform.position = plantSocket.position;
-        transform.rotation = plantSocket.rotation;
+        SetParentExact(plantSocket);
     }
 
     void PickUp()
@@ -142,12 +110,7 @@ public class TomatoInteraction : MonoBehaviour
         isInspecting = false;
         isTransitioning = false;
 
-        // Parent to hold point (under camera), keep world size
-        SetParentKeepWorldScale(playerHoldPoint);
-        transform.position = playerHoldPoint.position;
-        transform.rotation = playerHoldPoint.rotation;
-        transform.localPosition = Vector3.zero; // exactly at HoldPoint
-
+        SetParentExact(playerHoldPoint);
         LockCursor();
     }
 
@@ -163,12 +126,10 @@ public class TomatoInteraction : MonoBehaviour
         if (transitionRoutine != null)
             StopCoroutine(transitionRoutine);
 
-        // Freeze player movement / camera look
         if (playerMovement != null) playerMovement.enabled = false;
-        if (cameraLook != null)     cameraLook.enabled     = false;
-        LockCursor();
+        if (cameraLook != null) cameraLook.enabled = false;
 
-        // Animate from hand point to inspect point
+        LockCursor();
         transitionRoutine = StartCoroutine(AnimateBetween(playerHoldPoint, inspectPoint, toInspect: true));
     }
 
@@ -177,13 +138,11 @@ public class TomatoInteraction : MonoBehaviour
         if (transitionRoutine != null)
             StopCoroutine(transitionRoutine);
 
-        // Animate from inspect point back to hand
         transitionRoutine = StartCoroutine(AnimateBetween(inspectPoint, playerHoldPoint, toInspect: false));
     }
 
     void Drop()
     {
-        // If we were inspecting, restore controls
         if (isInspecting)
         {
             isInspecting = false;
@@ -196,24 +155,20 @@ public class TomatoInteraction : MonoBehaviour
 
         isTransitioning = false;
 
-        // Detach and keep world size
-        transform.SetParent(null, worldPositionStays: true);
-        AdjustLocalScaleForParent(null);
-
+        transform.SetParent(null);
         rb.isKinematic = false;
         isHeld = false;
 
         LockCursor();
     }
 
-    // ---------------- Animation coroutine ----------------
+    // ---------- Animation ----------
 
     IEnumerator AnimateBetween(Transform from, Transform to, bool toInspect)
     {
         isTransitioning = true;
         rb.isKinematic = true;
 
-        // Work fully in world space during animation
         Vector3 startPos = transform.position;
         Quaternion startRot = transform.rotation;
 
@@ -232,19 +187,13 @@ public class TomatoInteraction : MonoBehaviour
             yield return null;
         }
 
-        // Now snap to final parent but keep world position/rotation
-        transform.position = endPos;
-        transform.rotation = endRot;
-        transform.SetParent(to, worldPositionStays: true);
-        AdjustLocalScaleForParent(to); // keep world size equal to original
+        SetParentExact(to);
 
         isTransitioning = false;
 
         if (toInspect)
         {
-            // We are now in inspect mode
             transform.localPosition = Vector3.zero;
-
             Vector3 e = transform.localEulerAngles;
             inspectYaw = e.y;
             inspectPitch = e.x;
@@ -254,7 +203,6 @@ public class TomatoInteraction : MonoBehaviour
         }
         else
         {
-            // Back in the hand
             isInspecting = false;
             isHeld = true;
             RestoreControls();
@@ -262,50 +210,40 @@ public class TomatoInteraction : MonoBehaviour
         }
     }
 
-    // ---------------- Helpers ----------------
+    // ---------- Helpers ----------
 
-    /// <summary>
-    /// Parents the tomato and adjusts localScale so that world (lossy) scale
-    /// stays equal to originalWorldScale.
-    /// </summary>
-    void SetParentKeepWorldScale(Transform newParent)
+    void SetParentExact(Transform parent)
     {
-        // Move under new parent but keep world position/rotation/scale for now
-        transform.SetParent(newParent, worldPositionStays: true);
-        AdjustLocalScaleForParent(newParent);
+        transform.SetParent(parent, false);
+        transform.localPosition = Vector3.zero;
+        transform.localRotation = Quaternion.identity;
+        AdjustLocalScaleForParent(parent);
     }
 
-    /// <summary>
-    /// Recomputes localScale based on parent's lossyScale so that
-    /// transform.lossyScale == originalWorldScale.
-    /// </summary>
     void AdjustLocalScaleForParent(Transform parent)
     {
-        Vector3 parentScale = (parent != null) ? parent.lossyScale : Vector3.one;
+        Vector3 parentScale = parent != null ? parent.lossyScale : Vector3.one;
 
-        // Avoid division by zero
-        float sx = parentScale.x == 0 ? 1f : parentScale.x;
-        float sy = parentScale.y == 0 ? 1f : parentScale.y;
-        float sz = parentScale.z == 0 ? 1f : parentScale.z;
+        float px = parentScale.x == 0 ? 1f : parentScale.x;
+        float py = parentScale.y == 0 ? 1f : parentScale.y;
+        float pz = parentScale.z == 0 ? 1f : parentScale.z;
 
-        Vector3 newLocalScale = new Vector3(
-            originalWorldScale.x / sx,
-            originalWorldScale.y / sy,
-            originalWorldScale.z / sz
+        transform.localScale = new Vector3(
+            originalWorldScale.x / px,
+            originalWorldScale.y / py,
+            originalWorldScale.z / pz
         );
-
-        transform.localScale = newLocalScale;
     }
 
     void RestoreControls()
     {
         if (playerMovement != null) playerMovement.enabled = true;
-        if (cameraLook != null)     cameraLook.enabled     = true;
+        if (cameraLook != null) cameraLook.enabled = true;
     }
 
     void LockCursor()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible   = false;
+        Cursor.visible = false;
     }
 }
