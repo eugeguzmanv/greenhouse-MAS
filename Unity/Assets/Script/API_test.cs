@@ -12,14 +12,16 @@ public class TestAPIClient : MonoBehaviour
     public bool autoSend = true;
 
     // Example sample values you can edit in the Inspector
-    public float fruit_redness = 0.5f;
-    public float fruit_greenness = 0.2f;
-    public float leaf_health = 0.9f;
-    public float spot_count = 0f;
-    public float spot_darkness = 0f;
-    public float surface_texture = 0.3f;
-    public float size = 1.0f;
-    public float stem_brownness = 0.1f;
+    public double fruit_redness = 0.5f;
+    public double fruit_greenness = 0.2f;
+    public double leaf_health = 0.9f;
+    public double spot_count = 0f;
+    public double spot_darkness = 0f;
+    public double surface_texture = 0.3f;
+    public double size = 1.0f;
+    public double stem_brownness = 0.1f;
+    public int x_coordinate = 0;
+    public int y_coordinate = 0;
 
     private void Start()
     {
@@ -47,7 +49,9 @@ public class TestAPIClient : MonoBehaviour
             spot_darkness = spot_darkness,
             surface_texture = surface_texture,
             size = size,
-            stem_brownness = stem_brownness
+            stem_brownness = stem_brownness,
+            x_coordinate = x_coordinate,
+            y_coordinate = y_coordinate
         };
 
         APIManager.Instance.AnalyzeTomato(req, OnSuccess, OnError);
@@ -55,7 +59,8 @@ public class TestAPIClient : MonoBehaviour
 
     private void OnSuccess(APIManager.ResponseData res)
     {
-        Debug.Log($"[TestAPIClient] Success - probability: {res.probability}, cut_decision: {res.cut_decision}");
+        Debug.Log($"[TestAPIClient] Success - x coordinate: {res.x_coordinate}, y coordinate: {res.y_coordinate}, probability: {res.probability}, cut_decision: {res.cut_decision}");
+
     }
 
     private void OnError(string err)

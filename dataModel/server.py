@@ -61,6 +61,7 @@ def predict_tomato(data: TomatoInput):
         data.size,
         data.stem_brownness
     ]
+    
 
     #2. convert to pytorch tensor: 
     input_tensor = torch.tensor([features], dtype=torch.float32)
@@ -79,7 +80,7 @@ def predict_tomato(data: TomatoInput):
         cut_decision = "dont_cut"
 
     #5 return JSON
-    return{
+    return {
         "x_coordinate": data.x_coordinate,
         "y_coordinate": data.y_coordinate,
         "probability": score,
