@@ -11,9 +11,9 @@ public class CutterMover : MonoBehaviour
     [Tooltip("Altura fija para el cortador (Y en Unity)")]
     public float fixedY = 0.5f;
     [Tooltip("Tiempo en segundos entre cada movimiento")]
-    public float moveDelay = 1.0f;
+    public float moveDelay = 0f;
     [Tooltip("Velocidad de movimiento")]
-    public float moveSpeed = 5.0f;
+    public float moveSpeed = 12.0f;
     [Tooltip("Velocidad de rotación")]
     public float rotateSpeed = 360f;
 
@@ -66,11 +66,64 @@ public class CutterMover : MonoBehaviour
             {
                 // Cortar la planta principal
                 TryDestroyPlantAtPosition(zTarget.x, zTarget.z);
-                // Cortar vecinos
-                TryDestroyNeighborPlants(zTarget.x, zTarget.z);
+                // Cortar vecinos moviéndose a cada uno
+                yield return StartCoroutine(MoveAndCutNeighbors(zTarget.x, zTarget.z));
             }
         }
         Debug.Log("CutterMover: Finished moving to all cut points.");
+    }
+
+    // Mueve el cortador a cada vecino válido y lo corta uno por uno
+    private IEnumerator MoveAndCutNeighbors(float x, float z)
+    {
+        float xRange = 3f;
+        float zRange = 5f;
+        float tolerance = 0.1f;
+        GameObject[] plants = GameObject.FindGameObjectsWithTag("Plant");
+        List<Vector3> neighborPositions = new List<Vector3>();
+        List<APIManager.ResponseData> cutsList = APIManager.Instance != null ? APIManager.Instance.GetCutResults() : null;
+
+        // Buscar posiciones de vecinos válidos
+        foreach (GameObject plant in plants)
+        {
+            Vector3 pos = plant.transform.position;
+            // Ignorar la planta principal (ya cortada)
+            if (Mathf.Abs(pos.x - x) < tolerance && Mathf.Abs(pos.z - z) < tolerance)
+                continue;
+            // Verificar si es vecino (no diagonal)
+            if (Mathf.Abs(pos.x - x) <= xRange && Mathf.Abs(pos.z - z) <= zRange)
+            {
+                // Excluir la planta diagonal exacta (x+-3, z+-3)
+                if (Mathf.Abs(pos.x - x) == xRange && Mathf.Abs(pos.z - z) == zRange)
+                    continue;
+                // Revisar si el vecino está en la lista de cortes
+                bool isScheduledForCut = false;
+                if (cutsList != null)
+                {
+                    foreach (var cut in cutsList)
+                    {
+                        if (Mathf.Abs(cut.x_coordinate - pos.x) < tolerance && Mathf.Abs(cut.y_coordinate - pos.z) < tolerance)
+                        {
+                            isScheduledForCut = true;
+                            break;
+                        }
+                    }
+                }
+                if (isScheduledForCut)
+                    continue;
+                neighborPositions.Add(new Vector3(pos.x, fixedY, pos.z));
+            }
+        }
+
+        // Moverse a cada vecino y cortarlo
+        foreach (var npos in neighborPositions)
+        {
+            yield return StartCoroutine(RotateTowards(npos - transform.position));
+            yield return StartCoroutine(MoveToPosition(npos));
+            yield return new WaitForSeconds(moveDelay);
+            TryDestroyPlantAtPosition(npos.x, npos.z);
+        }
+        Debug.Log($"CutterMover: Total neighbors cut: {neighborPositions.Count} for ({x}, {z})");
     }
 
         // Busca y destruye los vecinos de la planta en la posición x/z indicada

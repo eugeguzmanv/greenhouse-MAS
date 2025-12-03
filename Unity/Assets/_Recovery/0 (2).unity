@@ -133,7 +133,6 @@ GameObject:
   - component: {fileID: 17506994}
   - component: {fileID: 17506993}
   - component: {fileID: 17506992}
-  - component: {fileID: 17506997}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -282,31 +281,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 17506990}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &17506997
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 17506990}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.18292807
-  fruit_greenness: 0.28344876
-  leaf_health: 0.9886118
-  spot_count: 0.811833
-  spot_darkness: 0.33163065
-  surface_texture: 0.19252467
-  size: 0.46200123
-  stem_brownness: 0.2840608
-  x_coordinate: 492
-  y_coordinate: 295
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &20376290
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,7 +384,6 @@ GameObject:
   - component: {fileID: 33696900}
   - component: {fileID: 33696899}
   - component: {fileID: 33696898}
-  - component: {fileID: 33696903}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -559,31 +532,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 33696896}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &33696903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 33696896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8373937
-  fruit_greenness: 0.2551749
-  leaf_health: 0.8438955
-  spot_count: 0.2976349
-  spot_darkness: 0.018949235
-  surface_texture: 0.2647377
-  size: 0.81143475
-  stem_brownness: 0.38175315
-  x_coordinate: 509
-  y_coordinate: 280
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &39494004
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,7 +546,6 @@ GameObject:
   - component: {fileID: 39494008}
   - component: {fileID: 39494007}
   - component: {fileID: 39494006}
-  - component: {fileID: 39494011}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -747,31 +694,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 39494004}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &39494011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 39494004}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.9477292
-  fruit_greenness: 0.40387952
-  leaf_health: 0.11006642
-  spot_count: 0.28152284
-  spot_darkness: 0.48961627
-  surface_texture: 0.7535385
-  size: 0.75046086
-  stem_brownness: 0.2711744
-  x_coordinate: 499
-  y_coordinate: 285
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &40604985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,7 +1004,7 @@ GameObject:
   - component: {fileID: 71919426}
   m_Layer: 0
   m_Name: Plants (14)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1096,7 +1018,7 @@ Transform:
   m_GameObject: {fileID: 71919425}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 509, y: -0.11, z: 285}
+  m_LocalPosition: {x: 508.94, y: -0.11, z: 285}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1482,14 +1404,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.7848102
-  fruit_greenness: 0.5886342
-  leaf_health: 0.7057795
-  spot_count: 0.28025988
-  spot_darkness: 0.10487657
-  surface_texture: 0.8563051
-  size: 0.19916381
-  stem_brownness: 0.3825534
+  fruit_redness: 1
+  fruit_greenness: 0
+  leaf_health: 1
+  spot_count: 0
+  spot_darkness: 0
+  surface_texture: 0
+  size: 0.5
+  stem_brownness: 0
   x_coordinate: 527
   y_coordinate: 275
   overrideRenderer: {fileID: 0}
@@ -1598,7 +1520,6 @@ GameObject:
   - component: {fileID: 96903363}
   - component: {fileID: 96903362}
   - component: {fileID: 96903361}
-  - component: {fileID: 96903366}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -1747,31 +1668,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 96903359}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &96903366
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 96903359}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.56920725
-  fruit_greenness: 0.19279164
-  leaf_health: 0.42604193
-  spot_count: 0.5984174
-  spot_darkness: 0.73296845
-  surface_texture: 0.03747749
-  size: 0.38151172
-  stem_brownness: 0.10412763
-  x_coordinate: 528
-  y_coordinate: 295
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &100329987
 GameObject:
   m_ObjectHideFlags: 0
@@ -1786,7 +1682,6 @@ GameObject:
   - component: {fileID: 100329991}
   - component: {fileID: 100329990}
   - component: {fileID: 100329989}
-  - component: {fileID: 100329994}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -1935,31 +1830,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 100329987}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &100329994
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100329987}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.12600836
-  fruit_greenness: 0.8389838
-  leaf_health: 0.8586288
-  spot_count: 0.33889085
-  spot_darkness: 0.26135287
-  surface_texture: 0.24646008
-  size: 0.95966005
-  stem_brownness: 0.87453526
-  x_coordinate: 499
-  y_coordinate: 290
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &115513660
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,7 +2174,7 @@ GameObject:
   - component: {fileID: 137497948}
   m_Layer: 0
   m_Name: Plants (27)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2318,7 +2188,7 @@ Transform:
   m_GameObject: {fileID: 137497947}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 502, y: -0.11, z: 280}
+  m_LocalPosition: {x: 502.01, y: -0.11, z: 280}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2729,7 +2599,6 @@ GameObject:
   - component: {fileID: 224944155}
   - component: {fileID: 224944154}
   - component: {fileID: 224944153}
-  - component: {fileID: 224944158}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -2878,31 +2747,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 224944151}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &224944158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 224944151}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8990188
-  fruit_greenness: 0.8301226
-  leaf_health: 0.7539692
-  spot_count: 0.09947585
-  spot_darkness: 0.68101114
-  surface_texture: 0.49016473
-  size: 0.2058904
-  stem_brownness: 0.3308919
-  x_coordinate: 499
-  y_coordinate: 280
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &230847445 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2fd71ba79d72f5d4cac328bd9e52d046, type: 3}
@@ -3051,7 +2895,7 @@ GameObject:
   - component: {fileID: 247131917}
   m_Layer: 0
   m_Name: Plants (32)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3243,7 +3087,6 @@ GameObject:
   - component: {fileID: 285709762}
   - component: {fileID: 285709761}
   - component: {fileID: 285709760}
-  - component: {fileID: 285709765}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -3392,31 +3235,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 285709758}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &285709765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 285709758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.48443207
-  fruit_greenness: 0.8873831
-  leaf_health: 0.92615855
-  spot_count: 0.89470667
-  spot_darkness: 0.90204877
-  surface_texture: 0.107635014
-  size: 0.2833168
-  stem_brownness: 0.9839877
-  x_coordinate: 528
-  y_coordinate: 290
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &287527482
 GameObject:
   m_ObjectHideFlags: 0
@@ -3465,7 +3283,6 @@ GameObject:
   - component: {fileID: 289021152}
   - component: {fileID: 289021151}
   - component: {fileID: 289021150}
-  - component: {fileID: 289021155}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -3614,31 +3431,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 289021148}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &289021155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 289021148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.68391466
-  fruit_greenness: 0.37557217
-  leaf_health: 0.3694032
-  spot_count: 0.42993137
-  spot_darkness: 0.87464905
-  surface_texture: 0.5346739
-  size: 0.27218252
-  stem_brownness: 0.29505882
-  x_coordinate: 518
-  y_coordinate: 285
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &305581563
 GameObject:
   m_ObjectHideFlags: 0
@@ -4013,7 +3805,6 @@ GameObject:
   - component: {fileID: 347569774}
   - component: {fileID: 347569773}
   - component: {fileID: 347569772}
-  - component: {fileID: 347569777}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -4162,31 +3953,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 347569770}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &347569777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 347569770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8203766
-  fruit_greenness: 0.2953007
-  leaf_health: 0.9926873
-  spot_count: 0.02214851
-  spot_darkness: 0.17729983
-  surface_texture: 0.19084853
-  size: 0.852534
-  stem_brownness: 0.13373795
-  x_coordinate: 518
-  y_coordinate: 275
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &360075541
 GameObject:
   m_ObjectHideFlags: 0
@@ -4319,7 +4085,7 @@ GameObject:
   - component: {fileID: 374387637}
   m_Layer: 0
   m_Name: Plants (13)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4552,7 +4318,7 @@ GameObject:
   - component: {fileID: 392312216}
   m_Layer: 0
   m_Name: Plants (39)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4566,7 +4332,7 @@ Transform:
   m_GameObject: {fileID: 392312215}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 492, y: -0.11, z: 290}
+  m_LocalPosition: {x: 492.39, y: -0.11, z: 290}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5021,7 +4787,7 @@ GameObject:
   - component: {fileID: 483984065}
   m_Layer: 0
   m_Name: Plants (30)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5035,7 +4801,7 @@ Transform:
   m_GameObject: {fileID: 483984064}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 502, y: -0.11, z: 295}
+  m_LocalPosition: {x: 502.01, y: -0.11, z: 295}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5297,7 +5063,7 @@ GameObject:
   - component: {fileID: 530553365}
   m_Layer: 0
   m_Name: Plants (31)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5423,7 +5189,6 @@ GameObject:
   - component: {fileID: 543732214}
   - component: {fileID: 543732213}
   - component: {fileID: 543732212}
-  - component: {fileID: 543732217}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -5572,31 +5337,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 543732210}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &543732217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 543732210}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.74921656
-  fruit_greenness: 0.6161255
-  leaf_health: 0.55613524
-  spot_count: 0.96860325
-  spot_darkness: 0.19844976
-  surface_texture: 0.3447711
-  size: 0.8895926
-  stem_brownness: 0.9400723
-  x_coordinate: 518
-  y_coordinate: 295
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &545714994
 GameObject:
   m_ObjectHideFlags: 0
@@ -5968,7 +5708,7 @@ GameObject:
   - component: {fileID: 584495605}
   m_Layer: 0
   m_Name: Plants (25)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6003,7 +5743,6 @@ GameObject:
   - component: {fileID: 586141856}
   - component: {fileID: 586141855}
   - component: {fileID: 586141854}
-  - component: {fileID: 586141859}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -6152,31 +5891,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 586141852}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &586141859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 586141852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.96247524
-  fruit_greenness: 0.66264755
-  leaf_health: 0.5709547
-  spot_count: 0.6869521
-  spot_darkness: 0.26090327
-  surface_texture: 0.60719585
-  size: 0.2842158
-  stem_brownness: 0.6029169
-  x_coordinate: 499
-  y_coordinate: 295
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &594635598
 GameObject:
   m_ObjectHideFlags: 0
@@ -6478,7 +6192,6 @@ GameObject:
   - component: {fileID: 630736147}
   - component: {fileID: 630736146}
   - component: {fileID: 630736145}
-  - component: {fileID: 630736150}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -6627,31 +6340,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 630736143}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &630736150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 630736143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.7244219
-  fruit_greenness: 0.2314952
-  leaf_health: 0.8352283
-  spot_count: 0.1646618
-  spot_darkness: 0.28374246
-  surface_texture: 0.29870167
-  size: 0.54122806
-  stem_brownness: 0.669673
-  x_coordinate: 509
-  y_coordinate: 290
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &632829792
 GameObject:
   m_ObjectHideFlags: 0
@@ -7010,7 +6698,7 @@ GameObject:
   - component: {fileID: 681463275}
   m_Layer: 0
   m_Name: Plants (33)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7314,7 +7002,6 @@ GameObject:
   - component: {fileID: 733327435}
   - component: {fileID: 733327434}
   - component: {fileID: 733327433}
-  - component: {fileID: 733327438}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -7463,31 +7150,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 733327431}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &733327438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 733327431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.7636378
-  fruit_greenness: 0.3422938
-  leaf_health: 0.6506999
-  spot_count: 0.418345
-  spot_darkness: 0.6605369
-  surface_texture: 0.1252217
-  size: 0.6903837
-  stem_brownness: 0.52996105
-  x_coordinate: 492
-  y_coordinate: 275
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &739065183
 GameObject:
   m_ObjectHideFlags: 0
@@ -7690,7 +7352,7 @@ GameObject:
   - component: {fileID: 759530819}
   m_Layer: 0
   m_Name: Plants (24)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7816,7 +7478,6 @@ GameObject:
   - component: {fileID: 774709826}
   - component: {fileID: 774709825}
   - component: {fileID: 774709824}
-  - component: {fileID: 774709829}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -7965,31 +7626,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774709822}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &774709829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774709822}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.5407539
-  fruit_greenness: 0.47713462
-  leaf_health: 0.90150845
-  spot_count: 0.9484703
-  spot_darkness: 0.43526354
-  surface_texture: 0.4646673
-  size: 0.34669816
-  stem_brownness: 0.2536221
-  x_coordinate: 499
-  y_coordinate: 275
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &792251191
 GameObject:
   m_ObjectHideFlags: 0
@@ -8004,7 +7640,6 @@ GameObject:
   - component: {fileID: 792251195}
   - component: {fileID: 792251194}
   - component: {fileID: 792251193}
-  - component: {fileID: 792251198}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -8153,31 +7788,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792251191}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &792251198
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 792251191}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.301539
-  fruit_greenness: 0.82487655
-  leaf_health: 0.9560451
-  spot_count: 0.8483753
-  spot_darkness: 0.5594184
-  surface_texture: 0.8564339
-  size: 0.7802897
-  stem_brownness: 0.042221576
-  x_coordinate: 512
-  y_coordinate: 290
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1001 &798463864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8276,7 +7886,6 @@ GameObject:
   - component: {fileID: 809185435}
   - component: {fileID: 809185434}
   - component: {fileID: 809185433}
-  - component: {fileID: 809185438}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -8425,31 +8034,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 809185431}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &809185438
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 809185431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.82353526
-  fruit_greenness: 0.049514376
-  leaf_health: 0.8357055
-  spot_count: 0.269075
-  spot_darkness: 0.14444366
-  surface_texture: 0.3728316
-  size: 0.9447964
-  stem_brownness: 0.27626434
-  x_coordinate: 492
-  y_coordinate: 290
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &816573764
 GameObject:
   m_ObjectHideFlags: 0
@@ -8553,7 +8137,6 @@ GameObject:
   - component: {fileID: 822337291}
   - component: {fileID: 822337290}
   - component: {fileID: 822337289}
-  - component: {fileID: 822337294}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -8702,31 +8285,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822337287}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &822337294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 822337287}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8110117
-  fruit_greenness: 0.28605422
-  leaf_health: 0.6851573
-  spot_count: 0.2767043
-  spot_darkness: 0.075058736
-  surface_texture: 0.3047728
-  size: 0.8975056
-  stem_brownness: 0.3503476
-  x_coordinate: 492
-  y_coordinate: 280
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &829887938
 GameObject:
   m_ObjectHideFlags: 0
@@ -9366,7 +8924,7 @@ GameObject:
   - component: {fileID: 957150500}
   m_Layer: 0
   m_Name: Plants (36)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9437,7 +8995,6 @@ GameObject:
   - component: {fileID: 979946557}
   - component: {fileID: 979946556}
   - component: {fileID: 979946555}
-  - component: {fileID: 979946560}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -9586,31 +9143,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 979946553}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &979946560
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979946553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.7427335
-  fruit_greenness: 0.3624656
-  leaf_health: 0.7746113
-  spot_count: 0.5808061
-  spot_darkness: 0.3812629
-  surface_texture: 0.07276191
-  size: 0.10457112
-  stem_brownness: 0.8502449
-  x_coordinate: 518
-  y_coordinate: 290
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &980139600
 GameObject:
   m_ObjectHideFlags: 0
@@ -9622,7 +9154,7 @@ GameObject:
   - component: {fileID: 980139601}
   m_Layer: 0
   m_Name: Plants (40)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9636,7 +9168,7 @@ Transform:
   m_GameObject: {fileID: 980139600}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 492, y: -0.11, z: 295}
+  m_LocalPosition: {x: 492.39, y: -0.11, z: 295}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9957,7 +9489,7 @@ GameObject:
   - component: {fileID: 1011194964}
   m_Layer: 0
   m_Name: Plants (26)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10080,7 +9612,7 @@ GameObject:
   - component: {fileID: 1022171344}
   m_Layer: 0
   m_Name: Plants (11)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10094,7 +9626,7 @@ Transform:
   m_GameObject: {fileID: 1022171343}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 509, y: -0.11, z: 295}
+  m_LocalPosition: {x: 508.94, y: -0.11, z: 295}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -10117,7 +9649,6 @@ GameObject:
   - component: {fileID: 1040851087}
   - component: {fileID: 1040851086}
   - component: {fileID: 1040851085}
-  - component: {fileID: 1040851090}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -10266,31 +9797,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040851083}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1040851090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040851083}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.7162407
-  fruit_greenness: 0.118854724
-  leaf_health: 0.9682605
-  spot_count: 0.07325059
-  spot_darkness: 0.2816082
-  surface_texture: 0.8252034
-  size: 0.6136022
-  stem_brownness: 0.2408823
-  x_coordinate: 521
-  y_coordinate: 290
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1056237614
 GameObject:
   m_ObjectHideFlags: 0
@@ -10604,7 +10110,6 @@ GameObject:
   - component: {fileID: 1083235212}
   - component: {fileID: 1083235211}
   - component: {fileID: 1083235210}
-  - component: {fileID: 1083235215}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -10753,31 +10258,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1083235208}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1083235215
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1083235208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.99807024
-  fruit_greenness: 0.68661886
-  leaf_health: 0.9247768
-  spot_count: 0.817739
-  spot_darkness: 0.05545164
-  surface_texture: 0.7231483
-  size: 0.4177913
-  stem_brownness: 0.26434833
-  x_coordinate: 492
-  y_coordinate: 285
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1100718399
 GameObject:
   m_ObjectHideFlags: 0
@@ -10792,7 +10272,6 @@ GameObject:
   - component: {fileID: 1100718403}
   - component: {fileID: 1100718402}
   - component: {fileID: 1100718401}
-  - component: {fileID: 1100718406}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -10941,31 +10420,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1100718399}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1100718406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100718399}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.806487
-  fruit_greenness: 0.2592834
-  leaf_health: 0.8501218
-  spot_count: 0.07000736
-  spot_darkness: 0.4948874
-  surface_texture: 0.6640167
-  size: 0.635774
-  stem_brownness: 0.4652411
-  x_coordinate: 509
-  y_coordinate: 275
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1135239172
 GameObject:
   m_ObjectHideFlags: 0
@@ -11165,7 +10619,6 @@ GameObject:
   - component: {fileID: 1189285805}
   - component: {fileID: 1189285804}
   - component: {fileID: 1189285803}
-  - component: {fileID: 1189285808}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -11314,31 +10767,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1189285801}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1189285808
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1189285801}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.91856706
-  fruit_greenness: 0.28023598
-  leaf_health: 0.9806485
-  spot_count: 0.050885517
-  spot_darkness: 0.373598
-  surface_texture: 0.21672246
-  size: 0.7938807
-  stem_brownness: 0.1421591
-  x_coordinate: 502
-  y_coordinate: 275
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1216110708
 GameObject:
   m_ObjectHideFlags: 0
@@ -11353,7 +10781,6 @@ GameObject:
   - component: {fileID: 1216110712}
   - component: {fileID: 1216110711}
   - component: {fileID: 1216110710}
-  - component: {fileID: 1216110715}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -11502,31 +10929,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1216110708}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1216110715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1216110708}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.9524116
-  fruit_greenness: 0.36706376
-  leaf_health: 0.8043378
-  spot_count: 0.10988624
-  spot_darkness: 0.3311403
-  surface_texture: 0.16103214
-  size: 0.74055064
-  stem_brownness: 0.55120975
-  x_coordinate: 509
-  y_coordinate: 285
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1222333031
 GameObject:
   m_ObjectHideFlags: 0
@@ -11751,7 +11153,6 @@ GameObject:
   - component: {fileID: 1254867269}
   - component: {fileID: 1254867268}
   - component: {fileID: 1254867267}
-  - component: {fileID: 1254867272}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -11900,31 +11301,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1254867265}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1254867272
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1254867265}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.6365087
-  fruit_greenness: 0.49314687
-  leaf_health: 0.45746186
-  spot_count: 0.8293559
-  spot_darkness: 0.7421632
-  surface_texture: 0.49513364
-  size: 0.9574793
-  stem_brownness: 0.8339154
-  x_coordinate: 509
-  y_coordinate: 295
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1257042899
 GameObject:
   m_ObjectHideFlags: 0
@@ -12203,7 +11579,7 @@ GameObject:
   - component: {fileID: 1297759475}
   m_Layer: 0
   m_Name: Plants (38)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12217,7 +11593,7 @@ Transform:
   m_GameObject: {fileID: 1297759474}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 492, y: -0.11, z: 285}
+  m_LocalPosition: {x: 492.39, y: -0.11, z: 285}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12815,7 +12191,6 @@ GameObject:
   - component: {fileID: 1353460637}
   - component: {fileID: 1353460636}
   - component: {fileID: 1353460635}
-  - component: {fileID: 1353460640}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -12964,31 +12339,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1353460633}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1353460640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1353460633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.75930184
-  fruit_greenness: 0.019370468
-  leaf_health: 0.34602296
-  spot_count: 0.6372503
-  spot_darkness: 0.88161564
-  surface_texture: 0.54352784
-  size: 0.9012515
-  stem_brownness: 0.16532785
-  x_coordinate: 528
-  y_coordinate: 285
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1362702588
 GameObject:
   m_ObjectHideFlags: 0
@@ -13092,7 +12442,6 @@ GameObject:
   - component: {fileID: 1410639316}
   - component: {fileID: 1410639315}
   - component: {fileID: 1410639314}
-  - component: {fileID: 1410639319}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -13241,31 +12590,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1410639312}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1410639319
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1410639312}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.07113357
-  fruit_greenness: 0.5036688
-  leaf_health: 0.11078674
-  spot_count: 0.67714536
-  spot_darkness: 0.8211218
-  surface_texture: 0.12123466
-  size: 0.19837087
-  stem_brownness: 0.6946417
-  x_coordinate: 521
-  y_coordinate: 285
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1424876956
 GameObject:
   m_ObjectHideFlags: 0
@@ -13571,7 +12895,6 @@ GameObject:
   - component: {fileID: 1436959002}
   - component: {fileID: 1436959001}
   - component: {fileID: 1436959000}
-  - component: {fileID: 1436959005}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -13720,31 +13043,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1436958998}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1436959005
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1436958998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.7138948
-  fruit_greenness: 0.30370188
-  leaf_health: 0.02156777
-  spot_count: 0.47104192
-  spot_darkness: 0.69458497
-  surface_texture: 0.90907484
-  size: 0.5963488
-  stem_brownness: 0.8141125
-  x_coordinate: 512
-  y_coordinate: 280
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1001 &1474298103
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13871,7 +13169,7 @@ GameObject:
   - component: {fileID: 1485309451}
   m_Layer: 0
   m_Name: Plants (12)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13885,7 +13183,7 @@ Transform:
   m_GameObject: {fileID: 1485309450}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 512, y: -0.11, z: 290}
+  m_LocalPosition: {x: 511.76, y: -0.11, z: 290}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -13975,14 +13273,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.9390068
-  fruit_greenness: 0.903723
-  leaf_health: 0.5488275
-  spot_count: 0.5102622
-  spot_darkness: 0.49223557
-  surface_texture: 0.6036019
-  size: 0.60638946
-  stem_brownness: 0.7924599
+  fruit_redness: 1
+  fruit_greenness: 0
+  leaf_health: 1
+  spot_count: 0
+  spot_darkness: 0
+  surface_texture: 0
+  size: 0.5
+  stem_brownness: 0
   x_coordinate: 527
   y_coordinate: 275
   overrideRenderer: {fileID: 0}
@@ -14214,7 +13512,7 @@ GameObject:
   - component: {fileID: 1516304391}
   m_Layer: 0
   m_Name: Plants (10)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14228,7 +13526,7 @@ Transform:
   m_GameObject: {fileID: 1516304390}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 512, y: -0.11, z: 295}
+  m_LocalPosition: {x: 511.76, y: -0.11, z: 295}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14248,7 +13546,7 @@ GameObject:
   - component: {fileID: 1520114604}
   m_Layer: 0
   m_Name: Plants (35)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14615,7 +13913,7 @@ GameObject:
   - component: {fileID: 1577958357}
   m_Layer: 0
   m_Name: Plants (37)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14629,7 +13927,7 @@ Transform:
   m_GameObject: {fileID: 1577958356}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 492, y: -0.11, z: 280}
+  m_LocalPosition: {x: 492.39, y: -0.11, z: 280}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14652,7 +13950,6 @@ GameObject:
   - component: {fileID: 1585114019}
   - component: {fileID: 1585114018}
   - component: {fileID: 1585114017}
-  - component: {fileID: 1585114022}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -14801,31 +14098,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1585114015}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1585114022
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1585114015}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8210155
-  fruit_greenness: 0.2517528
-  leaf_health: 0.9253531
-  spot_count: 0.2229482
-  spot_darkness: 0.2755034
-  surface_texture: 0.3317125
-  size: 0.32872972
-  stem_brownness: 0.43227172
-  x_coordinate: 512
-  y_coordinate: 285
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1587169728
 GameObject:
   m_ObjectHideFlags: 0
@@ -14926,7 +14198,7 @@ GameObject:
   - component: {fileID: 1619502643}
   m_Layer: 0
   m_Name: Plants (34)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14960,7 +14232,7 @@ GameObject:
   - component: {fileID: 1625885092}
   m_Layer: 0
   m_Name: Plants (29)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14974,7 +14246,7 @@ Transform:
   m_GameObject: {fileID: 1625885091}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 502, y: -0.11, z: 290}
+  m_LocalPosition: {x: 502.01, y: -0.11, z: 290}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14994,7 +14266,7 @@ GameObject:
   - component: {fileID: 1637991433}
   m_Layer: 0
   m_Name: Plants (16)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15008,7 +14280,7 @@ Transform:
   m_GameObject: {fileID: 1637991432}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 512, y: -0.11, z: 285}
+  m_LocalPosition: {x: 511.76, y: -0.11, z: 285}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15028,7 +14300,7 @@ GameObject:
   - component: {fileID: 1648912916}
   m_Layer: 0
   m_Name: Plants (19)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15042,7 +14314,7 @@ Transform:
   m_GameObject: {fileID: 1648912915}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 509, y: -0.11, z: 290}
+  m_LocalPosition: {x: 508.94, y: -0.11, z: 290}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -15670,7 +14942,6 @@ GameObject:
   - component: {fileID: 1749211027}
   - component: {fileID: 1749211026}
   - component: {fileID: 1749211025}
-  - component: {fileID: 1749211030}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -15819,31 +15090,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1749211023}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1749211030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1749211023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.81655675
-  fruit_greenness: 0.278345
-  leaf_health: 0.8919409
-  spot_count: 0.2274897
-  spot_darkness: 0.1472777
-  surface_texture: 0.4359534
-  size: 0.9117891
-  stem_brownness: 0.44564852
-  x_coordinate: 512
-  y_coordinate: 275
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1762934132
 GameObject:
   m_ObjectHideFlags: 0
@@ -15947,7 +15193,6 @@ GameObject:
   - component: {fileID: 1773787517}
   - component: {fileID: 1773787516}
   - component: {fileID: 1773787515}
-  - component: {fileID: 1773787520}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -16096,31 +15341,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773787513}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1773787520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1773787513}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.20789693
-  fruit_greenness: 0.45432788
-  leaf_health: 0.72762716
-  spot_count: 0.9611222
-  spot_darkness: 0.30659935
-  surface_texture: 0.31982026
-  size: 0.23748903
-  stem_brownness: 0.95650375
-  x_coordinate: 502
-  y_coordinate: 290
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1775308070
 GameObject:
   m_ObjectHideFlags: 0
@@ -16258,7 +15478,6 @@ GameObject:
   - component: {fileID: 1779225475}
   - component: {fileID: 1779225474}
   - component: {fileID: 1779225473}
-  - component: {fileID: 1779225478}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -16407,31 +15626,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1779225471}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1779225478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1779225471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8359231
-  fruit_greenness: 0.20776677
-  leaf_health: 0.8555087
-  spot_count: 0.2553962
-  spot_darkness: 0.1315303
-  surface_texture: 0.0474578
-  size: 0.7217823
-  stem_brownness: 0.116135456
-  x_coordinate: 512
-  y_coordinate: 295
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1820425266
 GameObject:
   m_ObjectHideFlags: 0
@@ -16443,7 +15637,7 @@ GameObject:
   - component: {fileID: 1820425267}
   m_Layer: 0
   m_Name: Plants (28)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16457,7 +15651,7 @@ Transform:
   m_GameObject: {fileID: 1820425266}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 502, y: -0.11, z: 285}
+  m_LocalPosition: {x: 502.01, y: -0.11, z: 285}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -16724,7 +15918,6 @@ GameObject:
   - component: {fileID: 1892886140}
   - component: {fileID: 1892886139}
   - component: {fileID: 1892886138}
-  - component: {fileID: 1892886143}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -16873,31 +16066,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1892886136}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1892886143
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892886136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8235017
-  fruit_greenness: 0.2024123
-  leaf_health: 0.8129174
-  spot_count: 0.191295
-  spot_darkness: 0.2739953
-  surface_texture: 0.2005741
-  size: 0.8558227
-  stem_brownness: 0.261516
-  x_coordinate: 502
-  y_coordinate: 280
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1901790163
 GameObject:
   m_ObjectHideFlags: 0
@@ -16909,7 +16077,7 @@ GameObject:
   - component: {fileID: 1901790164}
   m_Layer: 0
   m_Name: Plants (15)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16923,7 +16091,7 @@ Transform:
   m_GameObject: {fileID: 1901790163}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 512, y: -0.11, z: 280}
+  m_LocalPosition: {x: 511.76, y: -0.11, z: 280}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17124,7 +16292,6 @@ GameObject:
   - component: {fileID: 1912817625}
   - component: {fileID: 1912817624}
   - component: {fileID: 1912817623}
-  - component: {fileID: 1912817628}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -17273,31 +16440,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1912817621}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1912817628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1912817621}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.4248427
-  fruit_greenness: 0.30820423
-  leaf_health: 0.7477262
-  spot_count: 0.5683353
-  spot_darkness: 0.5872718
-  surface_texture: 0.1828319
-  size: 0.33185935
-  stem_brownness: 0.901942
-  x_coordinate: 521
-  y_coordinate: 295
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &1946373498
 GameObject:
   m_ObjectHideFlags: 0
@@ -17473,14 +16615,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8670447
-  fruit_greenness: 0.29390705
-  leaf_health: 0.771457
-  spot_count: 0.2763227
-  spot_darkness: 0.466317
-  surface_texture: 0.8948171
-  size: 0.8821903
-  stem_brownness: 0.58892953
+  fruit_redness: 0
+  fruit_greenness: 1
+  leaf_health: 0
+  spot_count: 1
+  spot_darkness: 1
+  surface_texture: 1
+  size: 0
+  stem_brownness: 1
   x_coordinate: 521
   y_coordinate: 280
   overrideRenderer: {fileID: 0}
@@ -17500,7 +16642,6 @@ GameObject:
   - component: {fileID: 1951123823}
   - component: {fileID: 1951123822}
   - component: {fileID: 1951123821}
-  - component: {fileID: 1951123826}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -17649,31 +16790,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1951123819}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1951123826
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1951123819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8037042
-  fruit_greenness: 0.90319675
-  leaf_health: 0.8586324
-  spot_count: 0.98388755
-  spot_darkness: 0.8622483
-  surface_texture: 0.795333
-  size: 0.45376378
-  stem_brownness: 0.4902062
-  x_coordinate: 502
-  y_coordinate: 295
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1001 &1952376305
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17757,7 +16873,7 @@ GameObject:
   - component: {fileID: 1974050764}
   m_Layer: 0
   m_Name: Plants (18)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17771,7 +16887,7 @@ Transform:
   m_GameObject: {fileID: 1974050763}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 509, y: -0.11, z: 280}
+  m_LocalPosition: {x: 508.94, y: -0.11, z: 280}
   m_LocalScale: {x: 0.22310302, y: 0.22310302, z: 0.22310302}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -17794,7 +16910,6 @@ GameObject:
   - component: {fileID: 1979997644}
   - component: {fileID: 1979997643}
   - component: {fileID: 1979997642}
-  - component: {fileID: 1979997647}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -17943,31 +17058,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979997640}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &1979997647
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1979997640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.2130212
-  fruit_greenness: 0.3419079
-  leaf_health: 0.4159643
-  spot_count: 0.2846244
-  spot_darkness: 0.6676072
-  surface_texture: 0.5266922
-  size: 0.11011558
-  stem_brownness: 0.5425467
-  x_coordinate: 502
-  y_coordinate: 285
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &2020882769
 GameObject:
   m_ObjectHideFlags: 0
@@ -18071,7 +17161,6 @@ GameObject:
   - component: {fileID: 2046694101}
   - component: {fileID: 2046694100}
   - component: {fileID: 2046694099}
-  - component: {fileID: 2046694104}
   m_Layer: 8
   m_Name: Tomato
   m_TagString: Untagged
@@ -18220,31 +17309,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046694097}
   m_Mesh: {fileID: -1340541719380434750, guid: 5494da16d3cff2044903785add48c93f, type: 3}
---- !u!114 &2046694104
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2046694097}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.19279642
-  fruit_greenness: 0.4381539
-  leaf_health: 0.7402527
-  spot_count: 0.23172112
-  spot_darkness: 0.16184299
-  surface_texture: 0.21144421
-  size: 0.50450355
-  stem_brownness: 0.7669416
-  x_coordinate: 518
-  y_coordinate: 280
-  overrideRenderer: {fileID: 0}
-  cutColor: {r: 1, g: 0, b: 0, a: 1}
-  scannedColor: {r: 0, g: 0, b: 1, a: 1}
 --- !u!1 &2053511767
 GameObject:
   m_ObjectHideFlags: 0
@@ -18345,7 +17409,7 @@ GameObject:
   - component: {fileID: 2061593339}
   m_Layer: 0
   m_Name: Plants (17)
-  m_TagString: Plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18971,14 +18035,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.82611156
-  fruit_greenness: 0.050381117
-  leaf_health: 0.6343136
-  spot_count: 0.93284714
-  spot_darkness: 0.49666113
-  surface_texture: 0.87355673
-  size: 0.71063083
-  stem_brownness: 0.48204333
+  fruit_redness: 0
+  fruit_greenness: 1
+  leaf_health: 0
+  spot_count: 1
+  spot_darkness: 1
+  surface_texture: 1
+  size: 0
+  stem_brownness: 1
   x_coordinate: 521
   y_coordinate: 275
   overrideRenderer: {fileID: 0}

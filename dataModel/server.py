@@ -72,9 +72,9 @@ def predict_tomato(data: TomatoInput):
     
     #4 process result
     score = prediction.item() #extract float from tensor
-    if score > 0.4 and score < 0.6: #decision of cutting
+    if score > 0.45 and score < 0.7: #decision of cutting
          cut_decision = "cut_plant"
-    elif score > 0.6: 
+    elif score > 0.7: 
         cut_decision = "cut_neighbors"
     else: 
         cut_decision = "dont_cut"

@@ -65,7 +65,7 @@ public class RayCastRight : MonoBehaviour
             Translation mov = GetComponent<Translation>();
             if (mov != null)
             {
-                StartCoroutine(mov.PausarPor(4f));
+                StartCoroutine(mov.PausarPor(2.5f));
             }
             else
             {
@@ -109,7 +109,7 @@ public class RayCastRight : MonoBehaviour
             }
 
             // Entrar en cooldown para evitar detección inmediata
-            StartCoroutine(CooldownDeteccion(0.3f));
+            StartCoroutine(CooldownDeteccion(0.2f));
         }
         else
         {

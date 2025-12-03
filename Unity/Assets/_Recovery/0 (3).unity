@@ -571,10 +571,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8373937
-  fruit_greenness: 0.2551749
-  leaf_health: 0.8438955
-  spot_count: 0.2976349
+  fruit_redness: 0.23739372
+  fruit_greenness: 0.55517495
+  leaf_health: 0.6438955
+  spot_count: 0.8976349
   spot_darkness: 0.018949235
   surface_texture: 0.2647377
   size: 0.81143475
@@ -4174,14 +4174,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8203766
-  fruit_greenness: 0.2953007
-  leaf_health: 0.9926873
-  spot_count: 0.02214851
-  spot_darkness: 0.17729983
+  fruit_redness: 0.2037659
+  fruit_greenness: 0.95300686
+  leaf_health: 0.29268727
+  spot_count: 0.22148506
+  spot_darkness: 0.7729982
   surface_texture: 0.19084853
-  size: 0.852534
-  stem_brownness: 0.13373795
+  size: 0.652534
+  stem_brownness: 0.33737952
   x_coordinate: 518
   y_coordinate: 275
   overrideRenderer: {fileID: 0}
@@ -7475,13 +7475,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.7636378
+  fruit_redness: 0.36363778
   fruit_greenness: 0.3422938
-  leaf_health: 0.6506999
-  spot_count: 0.418345
-  spot_darkness: 0.6605369
-  surface_texture: 0.1252217
-  size: 0.6903837
+  leaf_health: 0.15069991
+  spot_count: 0.71834505
+  spot_darkness: 0.8605369
+  surface_texture: 0.012522172
+  size: 0.1903837
   stem_brownness: 0.52996105
   x_coordinate: 492
   y_coordinate: 275
@@ -8437,14 +8437,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.82353526
+  fruit_redness: 0.23535275
   fruit_greenness: 0.049514376
-  leaf_health: 0.8357055
-  spot_count: 0.269075
+  leaf_health: 0.35705522
+  spot_count: 0.76907504
   spot_darkness: 0.14444366
-  surface_texture: 0.3728316
-  size: 0.9447964
-  stem_brownness: 0.27626434
+  surface_texture: 0.9728316
+  size: 0.7447964
+  stem_brownness: 0.76264346
   x_coordinate: 492
   y_coordinate: 290
   overrideRenderer: {fileID: 0}
@@ -8716,12 +8716,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
   fruit_redness: 0.8110117
   fruit_greenness: 0.28605422
-  leaf_health: 0.6851573
-  spot_count: 0.2767043
+  leaf_health: 0.2851573
+  spot_count: 0.6767043
   spot_darkness: 0.075058736
-  surface_texture: 0.3047728
+  surface_texture: 0.5047728
   size: 0.8975056
-  stem_brownness: 0.3503476
+  stem_brownness: 0.5503476
   x_coordinate: 492
   y_coordinate: 280
   overrideRenderer: {fileID: 0}
@@ -10953,14 +10953,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.806487
-  fruit_greenness: 0.2592834
-  leaf_health: 0.8501218
+  fruit_redness: 0.506487
+  fruit_greenness: 0.75928336
+  leaf_health: 0.15012178
   spot_count: 0.07000736
-  spot_darkness: 0.4948874
-  surface_texture: 0.6640167
-  size: 0.635774
-  stem_brownness: 0.4652411
+  spot_darkness: 0.8948874
+  surface_texture: 0.86401665
+  size: 0.33577397
+  stem_brownness: 0.9652411
   x_coordinate: 509
   y_coordinate: 275
   overrideRenderer: {fileID: 0}
@@ -11326,14 +11326,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.91856706
-  fruit_greenness: 0.28023598
-  leaf_health: 0.9806485
+  fruit_redness: 0.18567066
+  fruit_greenness: 0.80235976
+  leaf_health: 0.10648523
   spot_count: 0.050885517
-  spot_darkness: 0.373598
+  spot_darkness: 0.873598
   surface_texture: 0.21672246
-  size: 0.7938807
-  stem_brownness: 0.1421591
+  size: 0.6388072
+  stem_brownness: 0.44215912
   x_coordinate: 502
   y_coordinate: 275
   overrideRenderer: {fileID: 0}
@@ -15831,13 +15831,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.81655675
-  fruit_greenness: 0.278345
-  leaf_health: 0.8919409
-  spot_count: 0.2274897
-  spot_darkness: 0.1472777
-  surface_texture: 0.4359534
-  size: 0.9117891
+  fruit_redness: 0.016556764
+  fruit_greenness: 0.778345
+  leaf_health: 0.2919409
+  spot_count: 0.4274897
+  spot_darkness: 0.44727772
+  surface_texture: 0.93595344
+  size: 0.11789135
   stem_brownness: 0.44564852
   x_coordinate: 512
   y_coordinate: 275
@@ -16885,13 +16885,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cc47fda5f59094c92b2907dbb09df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TomatoProperties
-  fruit_redness: 0.8235017
-  fruit_greenness: 0.2024123
-  leaf_health: 0.8129174
-  spot_count: 0.191295
-  spot_darkness: 0.2739953
-  surface_texture: 0.2005741
-  size: 0.8558227
+  fruit_redness: 0.23501702
+  fruit_greenness: 0.60241234
+  leaf_health: 0.31291735
+  spot_count: 0.49912953
+  spot_darkness: 0.7739953
+  surface_texture: 0.50057405
+  size: 0.6558227
   stem_brownness: 0.261516
   x_coordinate: 502
   y_coordinate: 280
