@@ -32,6 +32,9 @@ public class APIManager : MonoBehaviour
 
     // --- 2B. CUT RESULTS STORAGE ---
     private List<ResponseData> cutResults = new List<ResponseData>();
+    // Event fired whenever the cutResults list is updated (after each API response)
+    // Subscribers receive a copy of the current list.
+    public event Action<List<ResponseData>> CutResultsUpdated;
 
     // Getter para acceder a los resultados de corte
     public List<ResponseData> GetCutResults()
@@ -52,21 +55,36 @@ public class APIManager : MonoBehaviour
         Debug.Log("Historial de cortes limpiado.");
     }
 
+    // Public helper to notify subscribers with the current cut results.
+    // Useful when another system (e.g. a patrolling agent) wants to request
+    // the latest list manually (for example when it finishes its route).
+    public void NotifyCutResultsUpdated()
+    {
+        try
+        {
+            CutResultsUpdated?.Invoke(GetCutResults());
+        }
+        catch (Exception e)
+        {
+            Debug.LogError($"Error invoking CutResultsUpdated (manual notify): {e.Message}");
+        }
+    }
+
     // Método para loguear todos los cortes registrados
     private void LogCutResults()
     {
         if (cutResults.Count == 0)
         {
-            Debug.Log("=== CUT RESULTS LIST === \nNo hay tomates marcados para cortar.");
+            Debug.Log("=== LISTA DE CORTES === \nNo hay tomates marcados para cortar.");
             return;
         }
 
-        string logMessage = "=== CUT RESULTS LIST ===\n";
+        string logMessage = "=== LISTA DE CORTES ===\n";
         for (int i = 0; i < cutResults.Count; i++)
         {
             ResponseData cut = cutResults[i];
-            logMessage += $"[{i + 1}] Coordinates: ({cut.x_coordinate}, {cut.y_coordinate}) | " +
-                         $"Decision: {cut.cut_decision} | Probability: {cut.probability:F2}\n";
+            logMessage += $"[{i + 1}] Coordenadas: ({cut.x_coordinate}, {cut.y_coordinate}) | " +
+                         $"Decisión: {cut.cut_decision} | Probabilidad: {cut.probability:F2}\n";
         }
         logMessage += $"Total de tomates para cortar: {cutResults.Count}\n" +
                      $"=====================";

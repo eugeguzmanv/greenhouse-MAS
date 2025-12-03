@@ -79,6 +79,16 @@ public class Translation : MonoBehaviour
             if (Vector3.Distance(transform.position, h) < 0.01f)
             {
                 state = 7;
+                // Notify APIManager that this agent finished its route so the
+                // cut results can be delivered now.
+                if (APIManager.Instance != null)
+                {
+                    APIManager.Instance.NotifyCutResultsUpdated();
+                }
+                else
+                {
+                    Debug.LogWarning("Translation: APIManager.Instance is null, cannot notify cut results.");
+                }
             }
         }
     }

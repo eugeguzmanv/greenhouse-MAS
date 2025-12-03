@@ -41,6 +41,7 @@ public class RayCastLeft : MonoBehaviour
                 tp.GetTomatoData();
             }
 
+            /*
             // Visual immediate feedback: pintar azul de escaneado (temporal)
             if (tp != null)
             {
@@ -58,6 +59,7 @@ public class RayCastLeft : MonoBehaviour
                     mr.materials = mats;
                 }
             }
+            */
 
             // Pause movement (si existe Translation)
             Translation mov = GetComponent<Translation>();
