@@ -14,6 +14,8 @@ public class CutterMover : MonoBehaviour
     public float moveDelay = 1.0f;
     [Tooltip("Velocidad de movimiento")]
     public float moveSpeed = 5.0f;
+    [Tooltip("Velocidad de rotación")]
+    public float rotateSpeed = 360f;
 
     private Coroutine moveRoutine;
 
@@ -40,9 +42,19 @@ public class CutterMover : MonoBehaviour
     {
         foreach (var cut in cuts)
         {
+            Vector3 current = transform.position;
             Vector3 target = new Vector3((float)cut.x_coordinate, fixedY, (float)cut.y_coordinate);
-            Debug.Log($"CutterMover: Moving to ({target.x}, {target.y}, {target.z}) for cut: {cut.cut_decision}");
-            yield return StartCoroutine(MoveToPosition(target));
+
+            // Mover en X primero
+            Vector3 xTarget = new Vector3(target.x, fixedY, current.z);
+            yield return StartCoroutine(RotateTowards(xTarget - current));
+            yield return StartCoroutine(MoveToPosition(xTarget));
+            yield return new WaitForSeconds(moveDelay);
+
+            // Luego mover en Z
+            Vector3 zTarget = new Vector3(target.x, fixedY, target.z);
+            yield return StartCoroutine(RotateTowards(zTarget - xTarget));
+            yield return StartCoroutine(MoveToPosition(zTarget));
             yield return new WaitForSeconds(moveDelay);
         }
         Debug.Log("CutterMover: Finished moving to all cut points.");
@@ -56,5 +68,19 @@ public class CutterMover : MonoBehaviour
             yield return null;
         }
         transform.position = target;
+    }
+
+    private IEnumerator RotateTowards(Vector3 direction)
+    {
+        if (direction == Vector3.zero) yield break;
+        // El frente del cortador es -Z, así que queremos que -transform.forward apunte a direction
+        Vector3 lookDir = direction.normalized;
+        Quaternion targetRot = Quaternion.LookRotation(-lookDir, Vector3.up);
+        while (Quaternion.Angle(transform.rotation, targetRot) > 1f)
+        {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRot, rotateSpeed * Time.deltaTime);
+            yield return null;
+        }
+        transform.rotation = targetRot;
     }
 }
