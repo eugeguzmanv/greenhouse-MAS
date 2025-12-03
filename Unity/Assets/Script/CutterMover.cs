@@ -56,8 +56,93 @@ public class CutterMover : MonoBehaviour
             yield return StartCoroutine(RotateTowards(zTarget - xTarget));
             yield return StartCoroutine(MoveToPosition(zTarget));
             yield return new WaitForSeconds(moveDelay);
+
+            // Cortar según el tipo de decisión
+            if (cut.cut_decision == "cut_plant")
+            {
+                TryDestroyPlantAtPosition(zTarget.x, zTarget.z);
+            }
+            else if (cut.cut_decision == "cut_neighbors")
+            {
+                // Cortar la planta principal
+                TryDestroyPlantAtPosition(zTarget.x, zTarget.z);
+                // Cortar vecinos
+                TryDestroyNeighborPlants(zTarget.x, zTarget.z);
+            }
         }
         Debug.Log("CutterMover: Finished moving to all cut points.");
+    }
+
+        // Busca y destruye los vecinos de la planta en la posición x/z indicada
+    // Vecinos: plantas con una separación de +-3 en X y +-5 en Z
+    private void TryDestroyNeighborPlants(float x, float z)
+    {
+        float xRange = 3f;
+        float zRange = 5f;
+        float tolerance = 0.1f;
+        GameObject[] plants = GameObject.FindGameObjectsWithTag("Plant");
+        int neighborCount = 0;
+
+        // Obtener la lista de cortes actual (coordenadas a ignorar)
+        List<APIManager.ResponseData> cutsList = APIManager.Instance != null ? APIManager.Instance.GetCutResults() : null;
+
+        foreach (GameObject plant in plants)
+        {
+            Vector3 pos = plant.transform.position;
+            // Ignorar la planta principal (ya cortada)
+            if (Mathf.Abs(pos.x - x) < tolerance && Mathf.Abs(pos.z - z) < tolerance)
+                continue;
+            // Verificar si es vecino (no diagonal)
+            if (Mathf.Abs(pos.x - x) <= xRange && Mathf.Abs(pos.z - z) <= zRange)
+            {
+                // Excluir la planta diagonal exacta (x+-3, z+-3)
+                if (Mathf.Abs(pos.x - x) == xRange && Mathf.Abs(pos.z - z) == zRange)
+                {
+                    Debug.Log($"CutterMover: Skipping diagonal neighbor at ({pos.x}, {pos.z})");
+                    continue;
+                }
+                // Revisar si el vecino está en la lista de cortes
+                bool isScheduledForCut = false;
+                if (cutsList != null)
+                {
+                    foreach (var cut in cutsList)
+                    {
+                        if (Mathf.Abs(cut.x_coordinate - pos.x) < tolerance && Mathf.Abs(cut.y_coordinate - pos.z) < tolerance)
+                        {
+                            isScheduledForCut = true;
+                            break;
+                        }
+                    }
+                }
+                if (isScheduledForCut)
+                {
+                    Debug.Log($"CutterMover: Neighbor plant at ({pos.x}, {pos.z}) is scheduled for main cut, skipping.");
+                    continue;
+                }
+                Debug.Log($"CutterMover: Destroying neighbor plant at ({pos.x}, {pos.z})");
+                Destroy(plant);
+                neighborCount++;
+            }
+        }
+        Debug.Log($"CutterMover: Total neighbors cut: {neighborCount} for ({x}, {z})");
+    }
+
+    // Busca y destruye el objeto con tag "Plant" en la posición x/z indicada
+    private void TryDestroyPlantAtPosition(float x, float z)
+    {
+        float tolerance = 0.1f; // margen de error para comparar posiciones
+        GameObject[] plants = GameObject.FindGameObjectsWithTag("Plant");
+        foreach (GameObject plant in plants)
+        {
+            Vector3 pos = plant.transform.position;
+            if (Mathf.Abs(pos.x - x) < tolerance && Mathf.Abs(pos.z - z) < tolerance)
+            {
+                Debug.Log($"CutterMover: Destroying plant at ({pos.x}, {pos.z})");
+                Destroy(plant);
+                return;
+            }
+        }
+        Debug.LogWarning($"CutterMover: No plant found at ({x}, {z})");
     }
 
     private IEnumerator MoveToPosition(Vector3 target)
