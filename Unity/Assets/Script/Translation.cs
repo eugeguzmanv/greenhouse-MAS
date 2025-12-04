@@ -83,7 +83,9 @@ public class Translation : MonoBehaviour
                 // cut results can be delivered now.
                 if (APIManager.Instance != null)
                 {
-                    APIManager.Instance.NotifyCutResultsUpdated();
+                    // Register this agent as ready; APIManager will wait until all expected
+                    // agents (scouts) are ready before dispatching the cut results.
+                    APIManager.Instance.RegisterAgentReady(gameObject.name);
                 }
                 else
                 {

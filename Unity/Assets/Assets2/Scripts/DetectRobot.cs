@@ -4,7 +4,7 @@ public class MovimientoRobot2 : MonoBehaviour
 {
     public float speed = 5f;
 
-    private int direccionIndex = 0;
+    // private int direccionIndex = 0;
     private bool detenido = false;
 
     private bool girando = false;

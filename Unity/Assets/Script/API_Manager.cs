@@ -36,6 +36,16 @@ public class APIManager : MonoBehaviour
     // Subscribers receive a copy of the current list.
     public event Action<List<ResponseData>> CutResultsUpdated;
 
+    // --- Agent readiness coordination ---
+    [Header("Coordination")]
+    [Tooltip("Number of scout agents that must be ready before dispatching cut results")]
+    public int expectedAgents = 2;
+    [Tooltip("Seconds to wait for all agents before forcing dispatch")]
+    public float readyTimeoutSeconds = 10f;
+
+    private HashSet<string> readyAgents = new HashSet<string>();
+    private Coroutine readyTimeoutCoroutine = null;
+
     // Getter para acceder a los resultados de corte
     public List<ResponseData> GetCutResults()
     {
@@ -68,6 +78,46 @@ public class APIManager : MonoBehaviour
         {
             Debug.LogError($"Error invoking CutResultsUpdated (manual notify): {e.Message}");
         }
+    }
+
+    // Register an agent as ready. When the number of unique ready agents reaches
+    // expectedAgents, the cut results are dispatched to subscribers. If not all
+    // agents arrive within readyTimeoutSeconds, the list is dispatched anyway.
+    public void RegisterAgentReady(string agentId)
+    {
+        if (string.IsNullOrEmpty(agentId)) agentId = "agent";
+        if (!readyAgents.Contains(agentId))
+        {
+            readyAgents.Add(agentId);
+            Debug.Log($"APIManager: Agent registered ready: {agentId} ({readyAgents.Count}/{expectedAgents})");
+        }
+
+        // Start/restart timeout coroutine
+        if (readyTimeoutCoroutine != null) StopCoroutine(readyTimeoutCoroutine);
+        readyTimeoutCoroutine = StartCoroutine(ReadyTimeoutCoroutine());
+
+        if (readyAgents.Count >= expectedAgents)
+        {
+            // All required agents are ready — dispatch and reset
+            Debug.Log("APIManager: All expected agents ready, dispatching cut results.");
+            NotifyCutResultsUpdated();
+            readyAgents.Clear();
+            if (readyTimeoutCoroutine != null) { StopCoroutine(readyTimeoutCoroutine); readyTimeoutCoroutine = null; }
+        }
+    }
+
+    private IEnumerator ReadyTimeoutCoroutine()
+    {
+        float t = 0f;
+        while (t < readyTimeoutSeconds)
+        {
+            t += Time.deltaTime;
+            yield return null;
+        }
+        Debug.LogWarning($"APIManager: Ready timeout reached ({readyTimeoutSeconds}s). Dispatching cut results with {readyAgents.Count}/{expectedAgents} agents.");
+        NotifyCutResultsUpdated();
+        readyAgents.Clear();
+        readyTimeoutCoroutine = null;
     }
 
     // Método para loguear todos los cortes registrados

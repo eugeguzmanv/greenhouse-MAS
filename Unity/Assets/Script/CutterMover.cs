@@ -40,6 +40,11 @@ public class CutterMover : MonoBehaviour
 
     private IEnumerator MoveToCutPoints(List<APIManager.ResponseData> cuts)
     {
+        // Reordenar la lista de cortes para seguir el recorrido por columnas y filas (serpentina)
+        List<APIManager.ResponseData> orderedCuts = OrderCuts(cuts);
+
+        // Usar la lista ordenada en lugar de la original
+        cuts = orderedCuts;
         foreach (var cut in cuts)
         {
             Vector3 current = transform.position;
@@ -206,6 +211,62 @@ public class CutterMover : MonoBehaviour
             yield return null;
         }
         transform.position = target;
+    }
+
+    // Reordena la lista de cortes según los grupos de columnas y patrón serpentina en Z
+    private List<APIManager.ResponseData> OrderCuts(List<APIManager.ResponseData> cuts)
+    {
+        // Definir orden de columnas por grupos
+        List<(int, int)> groups = new List<(int, int)>() {
+            (492, 499),
+            (502, 509),
+            (512, 518),
+            (521, 528)
+        };
+
+        float tol = 0.5f;
+        List<APIManager.ResponseData> ordered = new List<APIManager.ResponseData>();
+
+        // Work on a copy so we can remove processed items
+        List<APIManager.ResponseData> remaining = new List<APIManager.ResponseData>(cuts);
+
+        for (int gi = 0; gi < groups.Count; gi++)
+        {
+            int x1 = groups[gi].Item1;
+            int x2 = groups[gi].Item2;
+
+            // Collect items for each column
+            List<APIManager.ResponseData> colA = remaining.FindAll(c => Mathf.Abs(c.x_coordinate - x1) <= tol);
+            List<APIManager.ResponseData> colB = remaining.FindAll(c => Mathf.Abs(c.x_coordinate - x2) <= tol);
+
+            // Remove them from remaining
+            foreach (var it in colA) remaining.Remove(it);
+            foreach (var it in colB) remaining.Remove(it);
+
+            // Determine z ordering for this group: even groups (0-based) go high->low, odd groups low->high
+            bool descending = (gi % 2 == 0);
+
+            // Sort columns by y_coordinate (which maps to Z) accordingly
+            if (descending)
+            {
+                colA.Sort((a, b) => b.y_coordinate.CompareTo(a.y_coordinate));
+                colB.Sort((a, b) => a.y_coordinate.CompareTo(b.y_coordinate));
+            }
+            else
+            {
+                colA.Sort((a, b) => a.y_coordinate.CompareTo(b.y_coordinate));
+                colB.Sort((a, b) => b.y_coordinate.CompareTo(a.y_coordinate));
+            }
+
+            // Append colA then colB to ordered (this produces a snake-like traversal across the pair)
+            ordered.AddRange(colA);
+            ordered.AddRange(colB);
+        }
+
+        // Append any remaining cuts that didn't match the groups (keep original order)
+        ordered.AddRange(remaining);
+
+        return ordered;
     }
 
     private IEnumerator RotateTowards(Vector3 direction)
